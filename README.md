@@ -1,4 +1,5 @@
-# connect
-Best contact system ever!
+# Conecte
+Melhor sistema de contatos!
 
-All rights reserved. Copyright © 2016 - Waldson Moura.
+© 2016 - Waldson Moura.
+Todos os direitos reservados.
