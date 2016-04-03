@@ -1,0 +1,35 @@
+{
+  "name": "conecte",
+  "version": "1.0.0",
+  "description": "Melhor sistema de contatos!",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mourawaldson/connect.git"
+  },
+  "keywords": [
+    "contatos",
+    "contacts",
+    "address book",
+    "livro de endereços"
+  ],
+  "author": "Waldson Moura",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/mourawaldson/connect/issues"
+  },
+  "homepage": "https://github.com/mourawaldson/connect#readme",
+  "devDependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "mysql": "^2.10.2"
+  },
+  "private": true
+}
