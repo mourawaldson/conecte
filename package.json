@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "start": "index.js"
   },
   "repository": {
     "type": "git",
@@ -19,17 +20,32 @@
     "address book",
     "livro de endereços"
   ],
-  "author": "Waldson Moura",
+  "author": "Waldson Moura <mourawaldson@gmail.com> (https://github.com/mourawaldson)",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/mourawaldson/connect/issues"
   },
   "homepage": "https://github.com/mourawaldson/connect#readme",
+  "dependencies": {
+    "body-parser": "1.15.0",
+    "compression": "^1.6.1",
+    "ejs": "2.4.1",
+    "express": "4.13.4",
+    "mysql": "2.10.2",
+    "passport": "0.3.2",
+    "uglify-js": "2.6.2"
+  },
   "devDependencies": {
-    "body-parser": "^1.15.0",
-    "ejs": "^2.4.1",
-    "express": "^4.13.4",
-    "mysql": "^2.10.2"
+    "debug": "^2.2.0",
+    "jasmine-node": "^1.14.5",
+    "jshint": "^2.9.1",
+    "mocha": "^2.4.5",
+    "nodemon": "^1.9.1",
+    "should": "^8.3.0",
+    "watch": "^0.17.1"
+  },
+  "engines": {
+    "node": "5.10.0"
   },
   "private": true
 }
