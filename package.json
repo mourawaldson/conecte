@@ -2,17 +2,17 @@
   "name": "conecte",
   "version": "1.0.0",
   "description": "Melhor sistema de contatos!",
-  "main": "index.js",
+  "main": "app.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "test": "mocha",
-    "start": "index.js"
+    "start": "app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mourawaldson/connect.git"
+    "url": "git+https://github.com/mourawaldson/conecte.git"
   },
   "keywords": [
     "contatos",
@@ -23,9 +23,9 @@
   "author": "Waldson Moura <mourawaldson@gmail.com> (https://github.com/mourawaldson)",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/mourawaldson/connect/issues"
+    "url": "https://github.com/mourawaldson/conecte/issues"
   },
-  "homepage": "https://github.com/mourawaldson/connect#readme",
+  "homepage": "https://github.com/mourawaldson/conecte#readme",
   "dependencies": {
     "body-parser": "1.15.0",
     "compression": "^1.6.1",
@@ -45,7 +45,7 @@
     "watch": "^0.17.1"
   },
   "engines": {
-    "node": "5.10.0"
+    "node": "5.10.1"
   },
   "private": true
 }
