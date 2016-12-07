@@ -29,7 +29,7 @@ if (cluster.isMaster) {
     app.set('view engine', 'html');
 
     // Basic setup, express static folder (public), body parser and controllers folder
-    // public folder avaialbe as '/assets'
+    // public folder available as '/assets'
     app.use('/assets', express.static(__dirname + '/public'));
     app.use(bodyParser.json({type: '*/*'}));
     app.use(bodyParser.urlencoded({extended: true}));
