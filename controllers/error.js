@@ -38,7 +38,9 @@ router.use(function(req, res, next){
   if (req.accepts('html')) {
     res.render('error', {
         url: req.url,
-        message: message404
+        message: message404,
+        title: 'Ohhh! =/',
+        description: message404
     });
     return;
   }

@@ -2,7 +2,10 @@ let express = require('express'),
     router = express.Router();
 
 router.get('/', function(req, res) {
-  res.render('index');
+    res.render('index', {
+        title: 'Welcome',
+        description: 'Welcome'
+    });
 });
 
 router.use(require('./error'));
