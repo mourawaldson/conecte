@@ -1,4 +1,4 @@
-var express = require('express'),
+let express = require('express'),
     router = express.Router();
 
 router.get('/404', function(req, res, next){
@@ -10,7 +10,7 @@ router.get('/404', function(req, res, next){
 
 router.get('/403', function(req, res, next){
   // trigger a 403 error
-  var err = new Error('Not allowed!');
+  let err = new Error('Not allowed!');
   err.status = 403;
   next(err);
 });

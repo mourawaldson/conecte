@@ -6,7 +6,7 @@ if (cluster.isMaster) {
      const numCPUs = require('os').cpus().length;
 
      // Fork workers.
-     for (var i = 0; i < numCPUs; i++) {
+     for (let i = 0; i < numCPUs; i++) {
          cluster.fork();
      }
     
@@ -18,9 +18,10 @@ if (cluster.isMaster) {
          console.log(`worker ${worker.process.pid} died`);
      });
 } else {
-    var express = require('express'),
+    let express = require('express'),
         app = express(),
         bodyParser = require('body-parser');
+
     const port = process.env.PORT || 3000;
 
     // Setup views folder and view engine, making .ejs to .html
