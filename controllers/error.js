@@ -1,3 +1,5 @@
+'use strict';
+
 let express = require('express'),
     router = express.Router();
 
@@ -32,7 +34,7 @@ router.get('/500', function(req, res, next){
 
 router.use(function(req, res, next){
   res.status(404);
-  const message404 = 'Page not found';
+  const message404 = 'Página não encontrada!';
 
   // respond with html page
   if (req.accepts('html')) {

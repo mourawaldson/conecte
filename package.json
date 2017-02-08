@@ -45,7 +45,7 @@
     "watch": "^1.0.1"
   },
   "engines": {
-    "node": "7.2.1"
+    "node": "7.5.0"
   },
   "private": true
 }
