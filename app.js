@@ -20,9 +20,13 @@ if (cluster.isMaster) {
 } else {
     let express = require('express'),
         app = express(),
-        bodyParser = require('body-parser');
+        bodyParser = require('body-parser')
+        helmet = require('helmet');
 
     const port = process.env.PORT || 3000;
+
+    // Let's protect our app..
+    app.use(helmet());
 
     // Setup views folder and view engine, making .ejs to .html
     app.engine('.html', require('ejs').__express);
