@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mourawaldson/conecte.git"
+    "url": "https://github.com/mourawaldson/conecte.git"
   },
   "keywords": [
     "contatos",
@@ -27,26 +27,26 @@
   },
   "homepage": "https://github.com/mourawaldson/conecte#readme",
   "dependencies": {
-    "body-parser": "^1.16.0",
+    "body-parser": "^1.17.1",
     "compression": "^1.6.1",
-    "ejs": "^2.5.5",
-    "express": "^4.14.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
     "mysql": "^2.13.0",
     "passport": "^0.3.2",
-    "uglify-js": "^2.7.5",
-    "helmet": "^3.4.0"
+    "uglify-js": "^2.8.14",
+    "helmet": "^3.5.0"
   },
   "devDependencies": {
-    "debug": "^2.6.0",
+    "debug": "^2.6.3",
     "jasmine-node": "^1.14.5",
     "jshint": "^2.9.1",
     "mocha": "^3.2.0",
     "nodemon": "^1.9.1",
-    "should": "^11.2.0",
-    "watch": "^1.0.1"
+    "should": "^11.2.1",
+    "watch": "^1.0.2"
   },
   "engines": {
-    "node": "7.5.0"
+    "node": "*"
   },
   "private": true
 }
