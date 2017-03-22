@@ -20,7 +20,7 @@ if (cluster.isMaster) {
 } else {
     let express = require('express'),
         app = express(),
-        bodyParser = require('body-parser')
+        bodyParser = require('body-parser'),
         helmet = require('helmet');
 
     const port = process.env.PORT || 3000;
