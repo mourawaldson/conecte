@@ -36,9 +36,15 @@ if (cluster.isMaster) {
     // Basic setup, express static folder (public), body parser and controllers folder
     // public folder available as '/assets'
     app.use('/assets', express.static(__dirname + '/public'));
-    app.use(bodyParser.json({type: '*/*'}));
-    app.use(bodyParser.urlencoded({extended: true}));
+    // TODO: Revisit the body parser to proper handle each scenario!
+    app.use(bodyParser.json({type: '*/*'})); // application/json, text/plain, html, actually anything! =)
+    app.use(bodyParser.urlencoded({extended: true})); // https://www.npmjs.com/package/body-parser#extended
     app.use(require('./controllers'));
+
+    app.disable('x-powered-by');
+
+    //var compression = require('compression');
+    //app.use(compression());
 
     // Let's start to listen...
     app.listen(port, () => {
