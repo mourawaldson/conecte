@@ -10,6 +10,4 @@ router.get('/', function(req, res) {
     });
 });
 
-router.use(require('./error'));
-
 module.exports = router;

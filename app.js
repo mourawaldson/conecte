@@ -32,6 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(require('./routes/index'));
 app.use(require('./routes/modules'));
+app.use(require('./routes/error'));
 
 app.disable('x-powered-by');
 
