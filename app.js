@@ -28,7 +28,7 @@ app.use(logger('dev'));
 app.use(cookieParser());
 app.use(compression());
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(require('./routes/index'));
 app.use(require('./routes/modules'));
