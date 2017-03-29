@@ -8,7 +8,10 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "nodemon app.js"
+    "start": "node ./bin/www",
+    "nodemon": "nodemon ./bin/www",
+    "debug-unix": "DEBUG=conecte:* & npm start",
+    "debug-win": "set DEBUG=conecte:* & npm start"
   },
   "repository": {
     "type": "git",
@@ -27,23 +30,26 @@
   },
   "homepage": "https://github.com/mourawaldson/conecte#readme",
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "compression": "^1.6.1",
-    "ejs": "^2.5.6",
-    "express": "^4.15.2",
-    "helmet": "^3.5.0",
-    "mysql": "^2.13.0",
-    "passport": "^0.3.2",
-    "uglify-js": "^2.8.16"
+    "body-parser": "~1.17.*",
+    "compression": "~1.6.*",
+    "cookie-parser": "~1.4.*",
+    "ejs": "~2.5.*",
+    "express": "~4.15.*",
+    "helmet": "~3.5.*",
+    "morgan": "~1.8.*",
+    "mysql": "~2.13.*",
+    "passport": "~0.3.*",
+    "serve-favicon": "~2.4.*",
+    "uglify-js": "~2.8.*"
   },
   "devDependencies": {
-    "debug": "^2.6.3",
-    "jasmine-node": "^1.14.5",
-    "jshint": "^2.9.1",
-    "mocha": "^3.2.0",
-    "nodemon": "^1.9.1",
-    "should": "^11.2.1",
-    "watch": "^1.0.2"
+    "debug": "^2.6.*",
+    "jasmine-node": "^1.14.*",
+    "jshint": "^2.9.*",
+    "mocha": "^3.2.*",
+    "nodemon": "^1.9.*",
+    "should": "^11.2.*",
+    "watch": "^1.0.*"
   },
   "engines": {
     "node": "*"
