@@ -10,13 +10,9 @@ let express = require('express'),
     cookieParser = require('cookie-parser'),
     compression = require('compression');
 
-// Let's protect our app..
-app.use(helmet());
+require('dotenv').config();
 
-// Setup views folder and view engine, making .ejs to .html
-app.engine('.html', require('ejs').__express);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
+app.use(compression());
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
@@ -24,13 +20,22 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // public folder available as '/assets'
 app.use('/assets', express.static(path.join(__dirname, 'public')));
 
+// Setup views folder and view engine, making .ejs to .html
+app.engine('.html', require('ejs').__express);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+
 app.use(logger('dev'));
-app.use(cookieParser());
-app.use(compression());
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(require('./routes/index'));
+app.use(cookieParser());
+
+// Let's protect our app..
+app.use(helmet());
+
+app.use(require('./routes/site'));
 app.use(require('./routes/modules'));
 app.use(require('./routes/error'));
 

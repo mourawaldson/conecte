@@ -2,6 +2,6 @@
 
 let router = require('express').Router();
 
-router.use(require('./api/users'));
+router.use(require('./modules/users'));
 
 module.exports = router;

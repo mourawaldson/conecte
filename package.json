@@ -33,6 +33,7 @@
     "body-parser": "~1.17.*",
     "compression": "~1.6.*",
     "cookie-parser": "~1.4.*",
+    "dotenv": "~4.0.*",
     "ejs": "~2.5.*",
     "express": "~4.15.*",
     "helmet": "~3.5.*",
