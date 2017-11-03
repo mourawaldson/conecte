@@ -25,9 +25,9 @@
                         <div class="inner">
                         <h3 class="masthead-brand">Conecte</h3>
                         <nav class="nav nav-masthead">
-                            <a class="nav-link active" href="#">Início</a>
-                            <a class="nav-link" href="#">Sobre</a>
-                            <a class="nav-link" href="#">Contato</a>
+                            <a class="nav-link<% if (pageName === '/') { %> active<% } %>" href="/">Início</a>
+                            <a class="nav-link<% if (pageName === '/about') { %> active<% } %>" href="/about">Sobre</a>
+                            <a class="nav-link<% if (pageName === '/contact') { %> active<% } %>" href="/contact">Contato</a>
                         </nav>
                         </div>
                     </div>
