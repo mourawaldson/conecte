@@ -5,7 +5,8 @@ let express = require('express'),
     bodyParser = require('body-parser'),
     urlencodedParser = bodyParser.urlencoded({ extended: false }),
     Repository = require('../../core/repository'),
-    userRepository = new Repository('member');
+    userRepository = new Repository('member'),
+    moment = require('moment');
 
 let error = {"status": "error", "message": "missing a parameter"};
 
@@ -69,17 +70,16 @@ router.post('/api/user', urlencodedParser, function (req, res) {
         return res.send(error);
     }
 
-    let now = new Date().toISOString().slice(0, 10),
-        data = {
+    let data = {
             id: null,
             name: name,
-            username: username,
+            username: username + Math.floor((Math.random() * 100) + 1),
             password: password,
             birth: birth,
             sign_up_token: 'random test',
             active: true,
-            creation: now,
-            sign_up: now
+            creation: moment().format('YYYY-MM-DD HH:mm:ss'),
+            sign_up: null
         };
 
     userRepository.save(data, function (err, result) {
