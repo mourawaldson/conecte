@@ -16,10 +16,50 @@ Repository.prototype = {
         objMysql.query(`SELECT * FROM ${this.name}`, callback);
     },
     save: function (data, callback) {
-        objMysql.query(`INSERT INTO ${this.name} SET ?`, data, callback);
+        objMysql.beginTransaction((err) => {
+            if (err) { throw err; }
+
+            objMysql.query(`INSERT INTO ${this.name} SET ?`, data, (error, results, fields) => {
+                if (error) {
+                    return objMysql.rollback(() => {
+                        throw error;
+                    });
+                }
+
+                objMysql.commit((err) => {
+                    if (err) {
+                        return objMysql.rollback(() => {
+                            throw err;
+                        });
+                    }
+
+                    callback();
+                });
+            });
+        });
     },
     delete: function (id, callback) {
-        objMysql.query(`DELETE FROM ${this.name} WHERE id = ?`, [id], callback);
+        objMysql.beginTransaction((err) => {
+            if (err) { throw err; }
+
+            objMysql.query(`DELETE FROM ${this.name} WHERE id = ?`, [id], (error, results, fields) => {
+                if (error) {
+                    return objMysql.rollback(() => {
+                        throw error;
+                    });
+                }
+
+                objMysql.commit((err) => {
+                    if (err) {
+                        return objMysql.rollback(() => {
+                            throw err;
+                        });
+                    }
+
+                    callback();
+                });
+            });
+        });
     }
 };
 

@@ -16,6 +16,15 @@ let mysqlWrapper = function (hostname, username, password, database, port = 3306
 mysqlWrapper.prototype = {
     query: function (query, values, callback) {
         this.connection.query(query, values, callback);
+    },
+    beginTransaction: function (options, callback) {
+        this.connection.beginTransaction(options, callback);
+    },
+    commit: function (options, callback) {
+        this.connection.commit(options, callback);
+    },
+    rollback: function (options, callback) {
+        this.connection.rollback(options, callback);
     }
 };
 
