@@ -13,18 +13,16 @@ let error = {"status": "error", "message": "missing a parameter"};
 router.get('/users', function (req, res) {
     try {
         userRepository.getAll(function (err, rows, fields) {
-            if (err) {
-                if (err) throw err;
+            if (err) { throw err; }
+
+            if (rows.length) {
+                res.json(rows);
             } else {
-                if (rows.length) {
-                    res.json(rows);
-                } else {
-                    res.sendStatus(404);
-                }
+                res.sendStatus(404);
             }
         });
     } catch (e) {
-        console.log(e.message);
+        console.error(e.message);
         res.sendStatus(404);
     }
 });
@@ -55,7 +53,7 @@ router.get('/api/user/:id', function (req, res) {
             }
         });
     } catch (e) {
-        console.log(e.message);
+        console.error(e.message);
         res.sendStatus(404);
     }
 });
@@ -83,11 +81,7 @@ router.post('/api/user', urlencodedParser, function (req, res) {
         };
 
     userRepository.save(data, function (err, result) {
-        if (err) {
-            res.sendStatus(404);
-        } else {
-            res.sendStatus(200);
-        }
+        res.sendStatus((err) ? 404 : 200);
     });
 });
 
@@ -97,11 +91,7 @@ router.delete('/api/user/:id', function (req, res) {
         return res.send(error);
     }
     userRepository.delete(id, function (err, result) {
-        if (err) {
-            res.sendStatus(404);
-        } else {
-            res.sendStatus(200);
-        }
+        res.sendStatus((err) ? 404 : 200);
     });
 });
 
